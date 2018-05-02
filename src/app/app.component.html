@@ -1,0 +1,78 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<alert type="success">hello</alert>
+
+
+
+<accordion>
+    <accordion-group *ngFor="let return of returns">
+        <div class="row" accordion-heading>
+            <div class="col-md-4">
+                Return ID: {{ return.id }}
+            </div>
+            <div class="col-md-5">
+              Created {{ return.returnDate }}
+            </div>
+            <div class="col-md-3">
+              {{ return.returnStatus }}
+            </div>
+        </div>
+
+        <div class="return-content" >
+            <div class="return-item" *ngFor="let returnItem of return.items">
+                <h4 class="return-item-header">{{ returnItem.itemName }}</h4>
+
+                <div class="return-item-detail">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>SKU: </strong>
+                            {{ returnItem.sku }}
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Order No: </strong>
+                            <a href="#">{{ returnItem.orderNo }}</a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Reason: </strong>
+                            {{ returnItem.returnReason }}
+
+
+                            <!-- *ngIf="shouldDisplayCreditMemo()" -->
+                            <div class="approval-detail">
+                                <strong>Credit Memo: </strong>
+                                <a href="#">{{ returnItem.creditMemo }}</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <strong>Comments: </strong>
+                            {{ returnItem.comments }}
+                        </div>
+
+                    </div>
+
+                    <!-- *ngIf="shouldDisplayDenialReason()" -->
+                    <div class="denial-detail" >
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <strong>Reason for Denial: </strong>
+                                {{ returnItem.denialReason }}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+  </accordion-group>
+</accordion>
