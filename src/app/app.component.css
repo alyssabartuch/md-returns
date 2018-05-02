@@ -49,20 +49,22 @@ a, a:hover {
 }
 
 
-
-.static-header {
-    background-color: #BDBDBD;
+ ::ng-deep .panel.static-header {
+    background-color: #ed2024;
+    color: #fff;
     text-align: center;
+  }
 
-}
+  ::ng-deep .panel.dynamic-header {
 
-.accordion-header:hover {
-    cursor: pointer;
-}
+     cursor: pointer;
+   }
 
-.accordion-header {
-    height: 20px;
+
+.accordion-header, .accordion-header:hover {
     text-align: center;
+    height: 10px;
+    margin-bottom: 5px;
 
 }
 

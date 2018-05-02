@@ -32,7 +32,7 @@
 
 
         <accordion>
-            <accordion-group class="static-header" isDisabled="true">
+            <accordion-group isDisabled="true" panelClass="static-header">
                 <div class="row" accordion-heading>
                     <div class="col-md-4">
                         Return ID
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </accordion-group>
-            <accordion-group *ngFor="let return of returns">
+            <accordion-group *ngFor="let return of returns" panelClass="dynamic-header">
                 <div class="row accordion-header" accordion-heading>
                     <div class="col-md-4">
                         {{ return.id }}
@@ -82,7 +82,7 @@
 
 
                                     <!-- *ngIf="shouldDisplayCreditMemo()" -->
-                                    <div class="approval-detail">
+                                    <div class="approval-detail" *ngIf="shouldDisplayCreditMemo(returnItem)">
                                         <strong>Credit Memo: </strong>
                                         <a href="#">{{ returnItem.creditMemo }}</a>
                                     </div>
@@ -95,7 +95,7 @@
                             </div>
 
                             <!-- *ngIf="shouldDisplayDenialReason()" -->
-                            <div class="denial-detail" >
+                            <div class="denial-detail" *ngIf="shouldDisplayDenialReason(returnItem)">
                                 <hr />
                                 <div class="row">
                                     <div class="col-md-12">
@@ -115,6 +115,7 @@
 
           </accordion-group>
         </accordion>
+
 
     </div>
 </body>
