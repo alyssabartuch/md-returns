@@ -1,1 +1,76 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+body {
+    background-color: #BDBDBD;
+    height: 100%;
+}
+
+.view-container {
+    margin: 0px 100px 0px 100px;
+    padding: 20px;
+    background-color: white;
+    height: 100%;
+}
+
+.md-btn, .md-btn:hover {
+    background-color: #ed2024;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+a, a:hover {
+    color: #ed2024;
+}
+
+.page-title h3 {
+    font: 22px helvetica, sans-serif;
+    font-weight: 300;
+    color: #ed2024;
+    margin-bottom: 20px;
+}
+
+.page-picker-container{
+    border: 2px solid grey;
+    margin: 15px;
+    width: 100%;
+    padding: 5px;
+}
+
+
+
+.page-desc {
+    font: 14px helvetica, sans-serif;
+    font-weight: 300;
+    color: #616161;
+    margin-bottom: 20px;
+}
+
+
+
+.static-header {
+    background-color: #BDBDBD;
+    text-align: center;
+
+}
+
+.accordion-header:hover {
+    cursor: pointer;
+}
+
+.accordion-header {
+    height: 20px;
+    text-align: center;
+
+}
+
+.return-item {
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+hr {
+    background-color: red;
+}
