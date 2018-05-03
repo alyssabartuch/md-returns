@@ -26,45 +26,69 @@
 
         <div class="row">
             <div class="page-picker-container">
-                <h3>Page Picker</h3>
+                <button type="button">
+                    1
+                </button>
+                <button type="button">
+                    2
+                </button>
+                <button type="button">
+                    3
+                </button>
+                <button type="button">
+                    <i class="fas fa-caret-right"></i>
+                </button>
+
+
+                <div class="records-per-page page-desc">
+                    Show
+                    <div class="btn-group" dropdown>
+                        <button id="button-basic" dropdownToggle type="button" class="btn per-page-dropdown dropdown-toggle" aria-controls="dropdown-basic">
+                            10
+                        </button>
+                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                            <li role="menuitem"><a class="dropdown-item" href="#">10</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="#">20</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="#">50</a></li>
+
+                        </ul>
+                    </div>
+                    per page
+                </div>
+
             </div>
+
+
+
+
         </div>
 
 
         <accordion>
-            <accordion-group isDisabled="true" panelClass="static-header">
-                <div class="row" accordion-heading>
-                    <div class="col-md-4">
-                        Return ID
-                    </div>
-                    <div class="col-md-5">
-                      Date Created
-                    </div>
-                    <div class="col-md-3">
-                      Return Status
-                    </div>
-                </div>
-            </accordion-group>
+
             <accordion-group *ngFor="let return of returns" panelClass="dynamic-header">
-                <div class="row accordion-header" accordion-heading>
+
+                <!-- (click)="toggleExpanded(return)"  -->
+                <div class="row return-header" accordion-heading>
+                    <i class="fas fa-caret-right"></i>
                     <div class="col-md-4">
-                        {{ return.id }}
+                        Return ID {{ return.id }}
                     </div>
-                    <div class="col-md-5">
-                      {{ return.returnDate }}
+                    <div class="col-md-4">
+                      Created {{ return.returnDate }}
                     </div>
                     <div class="col-md-3">
                       {{ return.returnStatus }}
                     </div>
                 </div>
 
-                <div class="return-content" >
+                <div>
                     <div class="card return-item" *ngFor="let returnItem of return.items">
                         <h4 class="return-item-header">{{ returnItem.itemName }}</h4>
 
                         <div class="return-item-detail">
 
-                            <div class="row">
+                            <div class="row return-content">
                                 <div class="col-md-6">
                                     <strong>SKU: </strong>
                                     {{ returnItem.sku }}
@@ -75,14 +99,14 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row return-content" return-content>
                                 <div class="col-md-6">
                                     <strong>Reason: </strong>
                                     {{ returnItem.returnReason }}
 
 
                                     <!-- *ngIf="shouldDisplayCreditMemo()" -->
-                                    <div class="approval-detail" *ngIf="shouldDisplayCreditMemo(returnItem)">
+                                    <div class="approval-detail return-content" *ngIf="shouldDisplayCreditMemo(returnItem)">
                                         <strong>Credit Memo: </strong>
                                         <a href="#">{{ returnItem.creditMemo }}</a>
                                     </div>
@@ -95,7 +119,7 @@
                             </div>
 
                             <!-- *ngIf="shouldDisplayDenialReason()" -->
-                            <div class="denial-detail" *ngIf="shouldDisplayDenialReason(returnItem)">
+                            <div class="denial-detail return-content" *ngIf="shouldDisplayDenialReason(returnItem)">
                                 <hr />
                                 <div class="row">
                                     <div class="col-md-12">

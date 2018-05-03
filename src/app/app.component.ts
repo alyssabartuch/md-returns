@@ -6,13 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+    recordsPerPage = 10;
 
-
-  returns = [
+    returns = [
       {
           id: 100000036,
-          returnDate: 'Apr 19, 2018',
+          returnDate: 'Apr 25, 2018',
           returnStatus: 'Completed',
           items: [{
               itemName: 'Digitizer for iPad 2 - White',
@@ -27,7 +26,7 @@ export class AppComponent {
       },
       {
           id: 100000035,
-          returnDate: 'Apr 6, 2018',
+          returnDate: 'Apr 20, 2018',
           returnStatus: 'Completed',
           items: [
               {
@@ -54,7 +53,7 @@ export class AppComponent {
       },
       {
           id: 100000034,
-          returnDate: 'Mar 21, 2018',
+          returnDate: 'Apr 18, 2018',
           returnStatus: 'Completed',
           items: [{
               itemName: 'Digitizer for iPhone 4 - White',
@@ -69,7 +68,7 @@ export class AppComponent {
       },
       {
           id: 100000023,
-          returnDate: 'Feb 16, 2018',
+          returnDate: 'Apr 16, 2018',
           returnStatus: 'Completed',
           items: [{
               itemName: 'Digitizer for iPad Pro - Black',
@@ -84,7 +83,7 @@ export class AppComponent {
       },
       {
           id: 100000022,
-          returnDate: 'Jan 29, 2018',
+          returnDate: 'Apr 3, 2018',
           returnStatus: 'Completed',
           items: [
               {
@@ -111,7 +110,7 @@ export class AppComponent {
       },
       {
           id: 100000076,
-          returnDate: 'Apr 19, 2018',
+          returnDate: 'Mar 19, 2018',
           returnStatus: 'Completed',
           items: [{
               itemName: 'Digitizer for iPad 2 - White',
@@ -126,7 +125,7 @@ export class AppComponent {
       },
       {
           id: 100000037,
-          returnDate: 'Apr 6, 2018',
+          returnDate: 'Mar 6, 2018',
           returnStatus: 'Completed',
           items: [
               {
@@ -153,7 +152,7 @@ export class AppComponent {
       },
       {
           id: 100000764,
-          returnDate: 'Mar 21, 2018',
+          returnDate: 'Feb 20, 2018',
           returnStatus: 'Completed',
           items: [{
               itemName: 'Digitizer for iPhone 4 - White',
@@ -168,7 +167,7 @@ export class AppComponent {
       },
       {
           id: 100000753,
-          returnDate: 'Feb 16, 2018',
+          returnDate: 'Jan 29, 2018',
           returnStatus: 'Completed',
           items: [{
               itemName: 'Digitizer for iPad Pro - Black',
@@ -183,7 +182,7 @@ export class AppComponent {
       },
       {
           id: 100000678,
-          returnDate: 'Jan 29, 2018',
+          returnDate: 'Jan 2, 2018',
           returnStatus: 'Completed',
           items: [
               {
@@ -209,7 +208,7 @@ export class AppComponent {
           ]
       }
 
-  ];
+    ];
 
 
   shouldDisplayCreditMemo(returnItem) {
@@ -234,6 +233,8 @@ export class AppComponent {
       return displayDenialReason;
 
   }
+
+ // toggleExpanded(return) {}
 
 
 
